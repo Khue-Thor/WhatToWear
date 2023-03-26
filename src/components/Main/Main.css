@@ -1,0 +1,33 @@
+.main {
+  max-width: 1360px;
+  padding: 0 36px 0 36px;
+}
+
+.main__info {
+  display: flex;
+}
+
+.main__description-container {
+  margin: 0 0 34px 0;
+  display: flex;
+}
+
+
+.main__description {
+  font-family: 'Cabinet Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+  color: #000000;
+  margin: 0;
+}
+
+.main__items {
+  max-width: 100%;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 17px 20px;
+  margin: 0 0 85px 0;
+}

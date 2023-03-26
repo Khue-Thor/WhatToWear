@@ -1,0 +1,48 @@
+.weather__container {
+  background-color: #00A3FF;
+  border-radius: 12px;
+  max-width: 1360px;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  overflow: hidden;
+  margin: 0 0 40px 0;
+}
+
+.weather__temperature-container {
+  display: flex;
+  align-items: center;
+  padding: 0 0 0 16px;
+}
+
+.weather__temperature {
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 40px;
+  color: #ffffff;
+}
+
+.weather__images-container {
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.weather__cloud-union {
+  position: relative;
+  right: 0px;
+  top:0px;
+  width: 167px;
+  height: 98px;
+}
+
+.weather__sunny {
+  position: relative;
+  top: 0px;
+  right: -180px;
+  width: 60px;
+  height: 60px;
+}

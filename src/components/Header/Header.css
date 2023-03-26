@@ -1,6 +1,6 @@
 .header {
   max-width: 1360px;
-  padding: 32px 40px 28px 40px;
+  margin: 32px 40px 28px 40px;
 }
 
 .header__container {
