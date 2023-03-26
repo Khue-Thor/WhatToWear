@@ -1,0 +1,32 @@
+.toggleswitch__container {
+  position: relative;
+  width: 56px;
+  height: 28px;
+  border-radius: 20px;
+  color: #7E7E7E;
+  border: 2px #7E7E7E solid;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+  margin: 0 20px 0 0;
+}
+
+.toggleswitch__container:hover {
+  transition: ease-in 0.2s;
+  border-color: #000;
+}
+
+.toggleswitch {
+  width: 56px;
+  display: flex;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.5);
+  justify-content: space-around;
+}
+
