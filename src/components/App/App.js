@@ -7,7 +7,7 @@ import { location, API_KEY } from "../../utils/constants";
 import { weatherApi } from '../../utils/weatherApi';
 import { api } from "../../utils/api";
 import { defaultClothingItems } from "../../utils/clothingItems";
-
+import { CurrentTemperatureUnitContext } from "../../context/CurrentTemperatureUnitContext";
 
 
 function App() {
@@ -40,8 +40,10 @@ function App() {
 
   return (
     <div className="App">
-      <Header weatherData={weatherData}/>
+     <div>
+     <Header weatherData={weatherData}/>
       <Main weatherData={weatherData} cards={clothingitems} onCardClick={handleCardClick}/>
+     </div>
     </div>
   );
 }
