@@ -30,3 +30,47 @@
   justify-content: space-around;
 }
 
+.toggleswitch:hover {
+  color: #000;
+}
+.toggleswitch__f {
+  margin-left: 8px;
+  margin-right: 17px;
+}
+
+.toggleswitch__input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+} 
+
+
+.toggleswitch__slider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  transition: 0.4s;
+}
+
+.toggleswitch__slider:before {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  content: "";
+  width: 28px;
+  height: 28px;
+  left: 0;
+  bottom: 0;
+  color: white;
+  margin: auto;
+  background-color: #000;
+  transition: 0.2s;
+  border-radius: 50%;
+}
