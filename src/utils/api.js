@@ -13,7 +13,7 @@ export default class Api {
     return fetch(url, options).then(this._handleResponse);
   }
 
-  getItem = async () => {
+  getItems = async () => {
     return await this._request(`${this.baseUrl}/items`, {
       headers: {
         "Content-type": "application/json",
