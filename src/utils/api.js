@@ -3,29 +3,29 @@ export default class Api {
     this._baseUrl = baseUrl;
   }
 
+  _request(url, options) {
+    return fetch(url, options).then(this._handleResponse);
+  }
+
   _handleResponse(response) {
     return response.ok
       ? response.json()
       : Promise.reject(`Error: ${response.status} ${response.statusText}`);
   }
 
-  _request(url, options) {
-    return fetch(url, options).then(this._handleResponse);
-  }
-
   getItems = async () => {
-    return await this._request(`${this.baseUrl}/items`, {
+    return await this._request(`${this._baseUrl}/items`, {
       headers: {
-        "Content-type": "application/json",
+        "Content-Type": "application/json",
       },
     });
-  }
+  };
 
-  addItem = async ({name, imageUrl, weather}) => {
+  addItem = async ({ name, imageUrl, weather }) => {
     return await this._request(`${this._baseUrl}/items`, {
-      method: "POSt",
+      method: "POST",
       headers: {
-        "Content-type": "application/json",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         name,
@@ -46,8 +46,9 @@ export default class Api {
       }),
     });
   };
+
 }
 
 export const api = new Api({
-  baseUrl: "https://my-json-server.typicode.com/Khue-Thor/WhatToWear",
+  baseUrl: "https://my-json-server.typicode.com/Khue-Thor/se_project_react",
 })
