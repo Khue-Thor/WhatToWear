@@ -1,22 +1,28 @@
 import { useState, useEffect } from "react";
 import React from "react";
-import './App.css';
-import { Header } from '../Header/Header';
-import { Main } from '../Main/Main';
+import "./App.css";
+import { Header } from "../Header/Header";
+import { Main } from "../Main/Main";
 import { location, API_KEY } from "../../utils/constants";
-import { weatherApi } from '../../utils/weatherApi';
+import { weatherApi } from "../../utils/weatherApi";
 import { api } from "../../utils/api";
 import { defaultClothingItems } from "../../utils/clothingItems";
 import { CurrentTemperatureUnitContext } from "../../context/CurrentTemperatureUnitContext";
-
 
 function App() {
   const [weatherData, setWeatherData] = useState({});
   const [selectedCard, setSelectedCard] = useState(null);
   const [clothingitems, setClothingItems] = useState(defaultClothingItems);
+  const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
 
   const handleCardClick = (card) => {
     setSelectedCard(card);
+  };
+
+  const handleToggleSwitchChange = () => {
+    currentTemperatureUnit === "F"
+      ? setCurrentTemperatureUnit("C")
+      : setCurrentTemperatureUnit("F");
   };
 
   useEffect(() => {
@@ -37,13 +43,14 @@ function App() {
       .catch((error) => console.error(error));
   }, []);
 
-
   return (
     <div className="App">
-     <div>
-     <Header weatherData={weatherData}/>
-      <Main weatherData={weatherData} cards={clothingitems} onCardClick={handleCardClick}/>
-     </div>
+      <CurrentTemperatureUnitContext.Provider   value={{ currentTemperatureUnit, handleToggleSwitchChange }}>
+        <div className="App__content">
+          <Header weatherData={weatherData} />
+          <Main weatherData={weatherData} cards={clothingitems} onCardClick={handleCardClick} />
+        </div>
+      </CurrentTemperatureUnitContext.Provider>
     </div>
   );
 }
