@@ -74,3 +74,16 @@
   transition: 0.2s;
   border-radius: 50%;
 }
+
+.toggleswitch__input:checked + .toggleswitch {
+  color: white;
+}
+
+.toggleswitch__input:checked + .toggleswitch__slider:before {
+  content: "C";
+  transform: translateX(29px);
+}
+
+.toggleswitch__input + .toggleswitch__slider:before {
+  content: "F";
+}
