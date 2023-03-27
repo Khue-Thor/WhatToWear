@@ -105,7 +105,7 @@ function App() {
               <Main weatherData={weatherData} cards={clothingitems} onCardClick={handleCardClick} />
             </Route>
             <Route path={"/profile"}>
-              <Profile cards={clothingitems} handleAddClick={handleAddClick}/>
+              <Profile cards={clothingitems} handleAddClick={handleAddClick} onCardClick={handleCardClick}/>
             </Route>
           </Switch>
         </div>

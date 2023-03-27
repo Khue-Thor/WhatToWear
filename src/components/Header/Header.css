@@ -28,7 +28,8 @@
 }
 
 .header__logo:hover {
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 3px 3px 5px rgba(0, 163, 255, 0.3);
+  border-radius: 10px;
 }
 
 .header__date-location {
@@ -70,6 +71,9 @@
 
 .header__add-clothes:hover {
   cursor: pointer;
+  color: #00A3FF;
+  box-shadow: 3px 3px 5px rgba(36, 63, 239, 0.3);
+  border-radius: 20px;
 }
 
 .header__avatar {
