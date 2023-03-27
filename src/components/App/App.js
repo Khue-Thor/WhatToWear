@@ -8,12 +8,14 @@ import { weatherApi } from "../../utils/weatherApi";
 import { api } from "../../utils/api";
 import { defaultClothingItems } from "../../utils/clothingItems";
 import { CurrentTemperatureUnitContext } from "../../context/CurrentTemperatureUnitContext";
+import AddItemModal from '../AddItemModal/AddItemModal';
 
 function App() {
   const [weatherData, setWeatherData] = useState({});
   const [selectedCard, setSelectedCard] = useState(null);
   const [clothingitems, setClothingItems] = useState(defaultClothingItems);
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
+  const [isAddItemModalOpen, setIsAddItemModalOpen] = useState(false);
 
   const handleCardClick = (card) => {
     setSelectedCard(card);
@@ -49,6 +51,7 @@ function App() {
         <div className="App__content">
           <Header weatherData={weatherData} />
           <Main weatherData={weatherData} cards={clothingitems} onCardClick={handleCardClick} />
+          
         </div>
       </CurrentTemperatureUnitContext.Provider>
     </div>
