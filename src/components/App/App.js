@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import React from "react";
+import { Route, Switch } from "react-router-dom";
 import "./App.css";
 import { Header } from "../Header/Header";
 import { Main } from "../Main/Main";
+import { Profile } from "../Profile/Profile";
 import { location, API_KEY } from "../../utils/constants";
 import { weatherApi } from "../../utils/weatherApi";
 import { api } from "../../utils/api";
@@ -16,6 +18,7 @@ function App() {
   const [clothingitems, setClothingItems] = useState(defaultClothingItems);
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [isAddItemModalOpen, setIsAddItemModalOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleAddClick = () => setIsAddItemModalOpen(true);
 
@@ -79,6 +82,17 @@ function App() {
       .catch((error) => console.error(error));
   }, []);
 
+  function handleAddItemSubmit(name, imageUrl, weather) {
+    setIsLoading(true);
+    api.addItem({name, imageUrl, weather})
+      .then((item) => {
+        setClothingItems([item, ...clothingitems])
+        closeModal();
+      })
+      .catch((err) => console.error(err))
+      .finally(() => setIsLoading(false));
+  }
+
   return (
     <div className="App">
       <CurrentTemperatureUnitContext.Provider
@@ -86,16 +100,23 @@ function App() {
       >
         <div className="App__content">
           <Header weatherData={weatherData} hanleAddClick={handleAddClick} />
-          <Main weatherData={weatherData} cards={clothingitems} onCardClick={handleCardClick} />
+          <Switch>
+            <Route exact path={"/"}>
+              <Main weatherData={weatherData} cards={clothingitems} onCardClick={handleCardClick} />
+            </Route>
+            <Route path={"/profile"}>
+              <Profile cards={clothingitems} handleAddClick={handleAddClick} onCardClick={handleCardClick}/>
+            </Route>
+          </Switch>
         </div>
       </CurrentTemperatureUnitContext.Provider>
       {isAddItemModalOpen && (
         <AddItemModal
           name="create"
-          // isLoading={isLoading}
+          isLoading={isLoading}
           isOpen={isAddItemModalOpen}
           onCloseModal={closeModal}
-          // onAddItem={handleAddItemSubmit}
+          onAddItem={handleAddItemSubmit}
         />
       )}
     </div>
