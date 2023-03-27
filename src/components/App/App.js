@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import React from "react";
+import { Route, Switch } from "react-router-dom";
 import "./App.css";
 import { Header } from "../Header/Header";
 import { Main } from "../Main/Main";
@@ -86,7 +87,11 @@ function App() {
       >
         <div className="App__content">
           <Header weatherData={weatherData} hanleAddClick={handleAddClick} />
-          <Main weatherData={weatherData} cards={clothingitems} onCardClick={handleCardClick} />
+          <Switch>
+            <Route exact path={"/"}>
+              <Main weatherData={weatherData} cards={clothingitems} onCardClick={handleCardClick} />
+            </Route>
+          </Switch>
         </div>
       </CurrentTemperatureUnitContext.Provider>
       {isAddItemModalOpen && (
