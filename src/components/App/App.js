@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import "./App.css";
 import { Header } from "../Header/Header";
 import { Main } from "../Main/Main";
+import { Profile } from "../Profile/Profile";
 import { location, API_KEY } from "../../utils/constants";
 import { weatherApi } from "../../utils/weatherApi";
 import { api } from "../../utils/api";
@@ -90,6 +91,9 @@ function App() {
           <Switch>
             <Route exact path={"/"}>
               <Main weatherData={weatherData} cards={clothingitems} onCardClick={handleCardClick} />
+            </Route>
+            <Route path={"/profile"}>
+              <Profile cards={clothingitems} />
             </Route>
           </Switch>
         </div>
