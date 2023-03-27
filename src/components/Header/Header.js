@@ -5,7 +5,7 @@ import avatarPath from "../../images/avatar.svg";
 import { currentDate } from "../../utils/constants";
 import { ToggleSwitch } from "../ToggleSwitch/ToggleSwitch";
 
-export function Header({ weatherData }) {
+export function Header({ weatherData, hanleAddClick }) {
   const userName = "Terrence Tegegne";
   return (
     <div className="header">
@@ -19,7 +19,7 @@ export function Header({ weatherData }) {
 
         <div className="header__info-container">
           <ToggleSwitch />
-          <button className="header__add-clothes" type="button">
+          <button className="header__add-clothes" type="button" onClick={hanleAddClick}>
             + Add clothes
           </button>
           <p className="header__username">{userName}</p>
