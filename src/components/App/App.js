@@ -48,10 +48,7 @@ function App() {
 
   useEffect(() => {
     function handleOverlayClose(e) {
-      if (
-        { isAddItemModalOpen} &&
-        !e.target.closest(".modal__content")
-      ) {
+      if ({ isAddItemModalOpen } && !e.target.closest(".modal__content")) {
         // setIsImagePreviewOpen(false);
         setIsAddItemModalOpen(false);
         // setDeleteModalOpen(false);
@@ -64,14 +61,14 @@ function App() {
     };
   });
 
-  // useEffect(() => {
-  //   weatherApi
-  //     .getWeatherData(location, API_KEY)
-  //     .then((setweatherInfo) => {
-  //       setWeatherData(setweatherInfo);
-  //     })
-  //     .catch((error) => console.error(error));
-  // }, []);
+  useEffect(() => {
+    weatherApi
+      .getWeatherData(location, API_KEY)
+      .then((setweatherInfo) => {
+        setWeatherData(setweatherInfo);
+      })
+      .catch((error) => console.error(error));
+  }, []);
 
   useEffect(() => {
     api
@@ -85,24 +82,23 @@ function App() {
   return (
     <div className="App">
       <CurrentTemperatureUnitContext.Provider
-        value={(currentTemperatureUnit, handleToggleSwitchChange)}
+        value={{ currentTemperatureUnit, handleToggleSwitchChange }}
       >
         <div className="App__content">
-          <Header weatherData={weatherData} hanleAddClick={handleAddClick }/>
+          <Header weatherData={weatherData} hanleAddClick={handleAddClick} />
           <Main weatherData={weatherData} cards={clothingitems} onCardClick={handleCardClick} />
         </div>
       </CurrentTemperatureUnitContext.Provider>
       {isAddItemModalOpen && (
-          <AddItemModal
-            name="create"
-            // isLoading={isLoading}
-            isOpen={isAddItemModalOpen}
-            onCloseModal={closeModal}
-            // onAddItem={handleAddItemSubmit}
-          />
-        )}
+        <AddItemModal
+          name="create"
+          // isLoading={isLoading}
+          isOpen={isAddItemModalOpen}
+          onCloseModal={closeModal}
+          // onAddItem={handleAddItemSubmit}
+        />
+      )}
     </div>
-    
   );
 }
 
