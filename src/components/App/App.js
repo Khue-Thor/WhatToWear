@@ -29,6 +29,12 @@ function App() {
     // setDeleteModalOpen(false);
   };
 
+  const handleToggleSwitchChange = () => {
+    currentTemperatureUnit === "F"
+      ? setCurrentTemperatureUnit("C")
+      : setCurrentTemperatureUnit("F");
+  };
+
   useEffect(() => {
     const closeByEscape = (e) => {
       if (e.key === "Escape") {
@@ -40,15 +46,12 @@ function App() {
     return () => document.removeEventListener("keydown", closeByEscape);
   }, []);
 
-  const handleToggleSwitchChange = () => {
-    currentTemperatureUnit === "F"
-      ? setCurrentTemperatureUnit("C")
-      : setCurrentTemperatureUnit("F");
-  };
-
   useEffect(() => {
     function handleOverlayClose(e) {
-      if ({ isAddItemModalOpen } && !e.target.closest(".modal__content")) {
+      if (
+        { isAddItemModalOpen} &&
+        !e.target.closest(".modal__content")
+      ) {
         // setIsImagePreviewOpen(false);
         setIsAddItemModalOpen(false);
         // setDeleteModalOpen(false);
@@ -61,14 +64,14 @@ function App() {
     };
   });
 
-  useEffect(() => {
-    weatherApi
-      .getWeatherData(location, API_KEY)
-      .then((setweatherInfo) => {
-        setWeatherData(setweatherInfo);
-      })
-      .catch((error) => console.error(error));
-  }, []);
+  // useEffect(() => {
+  //   weatherApi
+  //     .getWeatherData(location, API_KEY)
+  //     .then((setweatherInfo) => {
+  //       setWeatherData(setweatherInfo);
+  //     })
+  //     .catch((error) => console.error(error));
+  // }, []);
 
   useEffect(() => {
     api
@@ -79,38 +82,27 @@ function App() {
       .catch((error) => console.error(error));
   }, []);
 
-  // function handleAddItemSubmit(name, imageUrl, weather) {
-  //   setIsLoading(true);
-  //   api
-  //     .addItem({ name, imageUrl, weather })
-  //     .then((item) => {
-  //       setClothingItems([item, ...clothingitems]);
-  //       closeModal();
-  //     })
-  //     .catch((err) => console.error(err))
-  //     .finally(() => setIsLoading(false));
-  // }
-
   return (
     <div className="App">
       <CurrentTemperatureUnitContext.Provider
         value={(currentTemperatureUnit, handleToggleSwitchChange)}
       >
         <div className="App__content">
-          <Header weatherData={weatherData} hanleAddClick={handleAddClick} />
+          <Header weatherData={weatherData} hanleAddClick={handleAddClick }/>
           <Main weatherData={weatherData} cards={clothingitems} onCardClick={handleCardClick} />
         </div>
       </CurrentTemperatureUnitContext.Provider>
       {isAddItemModalOpen && (
-        <AddItemModal
-          name="create"
-          // isLoading={isLoading}
-          isOpen={isAddItemModalOpen}
-          onCloseModal={closeModal}
-          // onAddItem={handleAddItemSubmit}
-        />
-      )}
+          <AddItemModal
+            name="create"
+            // isLoading={isLoading}
+            isOpen={isAddItemModalOpen}
+            onCloseModal={closeModal}
+            // onAddItem={handleAddItemSubmit}
+          />
+        )}
     </div>
+    
   );
 }
 
