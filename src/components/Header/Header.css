@@ -24,6 +24,11 @@
   position: relative;
   top: -4px;
   left: 0;
+  cursor: pointer;
+}
+
+.header__logo:hover {
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
 }
 
 .header__date-location {
@@ -76,4 +81,8 @@
   margin-left: 12px;
   cursor: pointer;
   border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.header__avatar:hover {
+  box-shadow: 5px 1px 5px rgba(0, 0, 0, 0.3);
 }

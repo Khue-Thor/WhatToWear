@@ -1,0 +1,89 @@
+.toggleswitch__container {
+  position: relative;
+  width: 56px;
+  height: 28px;
+  border-radius: 20px;
+  color: #7E7E7E;
+  border: 2px #7E7E7E solid;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+  margin: 0 20px 0 0;
+}
+
+.toggleswitch__container:hover {
+  transition: ease-in 0.2s;
+  border-color: #000;
+}
+
+.toggleswitch {
+  width: 56px;
+  display: flex;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.5);
+  justify-content: space-around;
+}
+
+.toggleswitch:hover {
+  color: #000;
+}
+.toggleswitch__f {
+  margin-left: 8px;
+  margin-right: 17px;
+}
+
+.toggleswitch__input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+} 
+
+
+.toggleswitch__slider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  transition: 0.4s;
+}
+
+.toggleswitch__slider:before {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  content: "";
+  width: 28px;
+  height: 28px;
+  left: 0;
+  bottom: 0;
+  color: white;
+  margin: auto;
+  background-color: #000;
+  transition: 0.2s;
+  border-radius: 50%;
+}
+
+.toggleswitch__input:checked + .toggleswitch {
+  color: white;
+}
+
+.toggleswitch__input:checked + .toggleswitch__slider:before {
+  content: "C";
+  transform: translateX(29px);
+}
+
+.toggleswitch__input + .toggleswitch__slider:before {
+  content: "F";
+}

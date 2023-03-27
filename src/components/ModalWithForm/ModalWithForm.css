@@ -1,0 +1,125 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgb(0, 0, 0, 0.5);
+  transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal__container {
+  background-color: #ffffff;
+  border-radius: 20px;
+  max-width: 496px;
+  padding: 0 28px 0 28px;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__form-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+
+.modal__form-title {
+  max-width: fit-content;
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  text-align: left;
+  padding: 28px 0 24px 0;
+  margin: 0;
+}
+
+.modal__close {
+  width: 16px;
+  height: 16px;
+  background: url("../../images/close-icon.svg") center no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+.modal__form-fieldset {
+  width: 440px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: none;
+  margin: 0 0 24px 0;
+  padding: 0;
+}
+
+.modal__form-input {
+  box-sizing: border-box;
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.5);
+  padding: 0;
+  border: none;
+  border-bottom: 1px rgb(0, 0, 0) solid;
+}
+
+.modal__form-label {
+  text-align: left;
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+}
+
+.modal__form-input_type_radio {
+  margin: 12px 0 0 0;
+}
+
+.modal__form-choice {
+  display: flex;
+  margin: 0px 0 8px 0;
+  gap: 8px;
+  font-family: 'Cabinet Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+}
+
+.modal__form-choice:last-of-type {
+  margin: 0;
+}
+
+.modal__form-save {
+  width: fit-content;
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.2;
+  color: #ffffff;
+  padding: 8px 16px 8px 16px;
+  margin: 0 0 36px 5px;
+  background: #000000;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+}
+
+.modal__form-save:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
