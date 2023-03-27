@@ -1,10 +1,16 @@
-import {React, useState } from "react";
+import {React, useState, useEffect } from "react";
 import { ModalWithForm } from "../ModalWithForm/ModalWithForm";
 
 export default function AddItemModal ({ name, isOpen, isLoading, onAddItem, onCloseModal }) {
   const [itemName, setItemName] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [weather, setWeather] = useState("");
+
+  useEffect(() => {
+    setItemName("");
+    setImageUrl("");
+    setWeather("");
+  }, [isOpen]);
 
   function handleNameChange(e) {
     setItemName(e.target.value);
