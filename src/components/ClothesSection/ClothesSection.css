@@ -1,5 +1,5 @@
 .clothes__section {
-  width: 1010px;
+  max-width: 1015px;
   display: flex;
   flex-direction: column;
   margin: 0 0 80px 0;
@@ -7,7 +7,7 @@
 
 .clothes__section-info {
   display: flex;
-  margin: 16px 0 0 40px;
+  margin: 18px 0 16px 0;
   gap: 20px;
   
 }
@@ -40,4 +40,6 @@
   display: flex;
   flex-wrap: wrap;
   gap:15.98px;
+  margin: 0;
+  padding: 0;
 }
