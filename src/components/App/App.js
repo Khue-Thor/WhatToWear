@@ -5,6 +5,7 @@ import "./App.css";
 import { Header } from "../Header/Header";
 import { Main } from "../Main/Main";
 import { Profile } from "../Profile/Profile";
+import { ItemModal } from "../ItemModal/ItemModal";
 import { location, API_KEY } from "../../utils/constants";
 import { weatherApi } from "../../utils/weatherApi";
 import { api } from "../../utils/api";
@@ -19,15 +20,17 @@ function App() {
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [isAddItemModalOpen, setIsAddItemModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [isImagePreviewOpen, setIsImagePreviewOpen] = useState(false);
 
   const handleAddClick = () => setIsAddItemModalOpen(true);
 
   const handleCardClick = (card) => {
     setSelectedCard(card);
+    setIsImagePreviewOpen(true);
   };
 
   const closeModal = () => {
-    // setIsImagePreviewOpen(false);
+    setIsImagePreviewOpen(false);
     setIsAddItemModalOpen(false);
     // setDeleteModalOpen(false);
   };
@@ -52,7 +55,7 @@ function App() {
   useEffect(() => {
     function handleOverlayClose(e) {
       if ({ isAddItemModalOpen } && !e.target.closest(".modal__content")) {
-        // setIsImagePreviewOpen(false);
+        setIsImagePreviewOpen(false);
         setIsAddItemModalOpen(false);
         // setDeleteModalOpen(false);
       }
@@ -117,6 +120,12 @@ function App() {
           isOpen={isAddItemModalOpen}
           onCloseModal={closeModal}
           onAddItem={handleAddItemSubmit}
+        />
+      )}
+      {isImagePreviewOpen && (
+        <ItemModal
+        card={selectedCard}
+        onCloseModal={closeModal}
         />
       )}
     </div>
