@@ -1,0 +1,85 @@
+.modal__preview {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgb(0, 0, 0, 0.5);
+  transition: visibility 0s linear 0.3s, opacity 0.3s linear;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal__preview-container {
+  width: 498px;
+  background: #FFFFFF;
+  border-radius: 16px;
+}
+
+.modal__preview-close {
+  width: 14px;
+  height: 14px;
+  background: url("../../images/close-icon.svg") center no-repeat;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  top:20px;
+  right: -217px;
+  z-index: 2;
+}
+
+.modal__preview-info {
+  font-family: 'Cabinet Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.modal__preview-image {
+  max-width: 498px;
+  min-height: 498px;
+  object-fit: cover;
+  border-radius: 5px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+  top:-20px;
+}
+
+
+.modal__description-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 32px 0 32px;
+}
+
+.modal__preview-title {
+ text-align: left;
+ margin: 0 0 12px 0;
+}
+
+
+
+.modal__preview-description {
+  text-align: left;
+}
+
+
+.modal__delete-button {
+  height: 24px;
+  font-family: 'Cabinet Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: red;
+  cursor: pointer;
+}
