@@ -102,6 +102,16 @@ function App() {
       .finally(() => setIsLoading(false));
   }
 
+  function handleCardDeleteSubmit() {
+    api
+      .deleteItem(selectedCard.id)
+      .then(() => {
+        setClothingItems([...clothingitems.filter((item) => item.id !== selectedCard.id)]);
+        setSelectedCard({});
+        closeModal();
+      })
+      .catch((err) => console.error(err));
+  }
   return (
     <div className="App">
       <CurrentTemperatureUnitContext.Provider
@@ -139,7 +149,7 @@ function App() {
         <DeleteConfirmationModal
         onCloseModal={closeModal}
         onOpen={openDeleteModal}
-        // handleDelete={handleCardDeleteSubmit}
+        handleDelete={handleCardDeleteSubmit}
       />
       )}
     </div>
