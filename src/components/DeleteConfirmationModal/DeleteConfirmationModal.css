@@ -51,3 +51,26 @@
   gap: 24px;
 }
 
+.modal__delete_confirm {
+  font-family: 'Cabinet Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #FF4D00;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.modal__delete_cancel {
+  font-family: 'Cabinet Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #000;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
