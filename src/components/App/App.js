@@ -6,6 +6,7 @@ import { Header } from "../Header/Header";
 import { Main } from "../Main/Main";
 import { Profile } from "../Profile/Profile";
 import { ItemModal } from "../ItemModal/ItemModal";
+import { DeleteConfirmationModal } from "../DeleteConfirmationModal/DeleteConfirmationModal";
 import { location, API_KEY } from "../../utils/constants";
 import { weatherApi } from "../../utils/weatherApi";
 import { api } from "../../utils/api";
@@ -21,6 +22,7 @@ function App() {
   const [isAddItemModalOpen, setIsAddItemModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isImagePreviewOpen, setIsImagePreviewOpen] = useState(false);
+  const [deleteModalOpen, setDeleteModalOpen] = useState(false);
 
   const handleAddClick = () => setIsAddItemModalOpen(true);
 
@@ -32,7 +34,11 @@ function App() {
   const closeModal = () => {
     setIsImagePreviewOpen(false);
     setIsAddItemModalOpen(false);
-    // setDeleteModalOpen(false);
+    setDeleteModalOpen(false);
+  };
+
+  const openDeleteModal = () => {
+    setDeleteModalOpen(true);
   };
 
   const handleToggleSwitchChange = () => {
@@ -126,7 +132,15 @@ function App() {
         <ItemModal
         card={selectedCard}
         onCloseModal={closeModal}
+        onDeleteModal={openDeleteModal}
         />
+      )}
+      {deleteModalOpen && (
+        <DeleteConfirmationModal
+        onCloseModal={closeModal}
+        onOpen={openDeleteModal}
+        // handleDelete={handleCardDeleteSubmit}
+      />
       )}
     </div>
   );
