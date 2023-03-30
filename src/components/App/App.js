@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import "./App.css";
 import { Header } from "../Header/Header";
 import { Main } from "../Main/Main";
+import { Footer } from "../Footer/Footer";
 import { Profile } from "../Profile/Profile";
 import { ItemModal } from "../ItemModal/ItemModal";
 import { DeleteConfirmationModal } from "../DeleteConfirmationModal/DeleteConfirmationModal";
@@ -127,6 +128,7 @@ function App() {
               <Profile cards={clothingitems} handleAddClick={handleAddClick} onCardClick={handleCardClick}/>
             </Route>
           </Switch>
+          <Footer/>
         </div>
       </CurrentTemperatureUnitContext.Provider>
       {isAddItemModalOpen && (
