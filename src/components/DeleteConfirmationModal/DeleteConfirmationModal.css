@@ -30,6 +30,10 @@
   right: -307px;
 }
 
+.modal__confirm-close:hover {
+  
+}
+
 .modal__messages-container {
  margin: 60px 0 40px 0;
 }
@@ -52,6 +56,8 @@
 }
 
 .modal__delete_confirm {
+  width: fit-content;
+  margin: auto;
   font-family: 'Cabinet Grotesk';
   font-style: normal;
   font-weight: 700;
@@ -63,7 +69,15 @@
   cursor: pointer;
 }
 
+.modal__delete_confirm:hover {
+  color: #000000;
+  background-color: #19acfb;
+  border-radius: 10px;
+}
+
 .modal__delete_cancel {
+  width: fit-content;
+  margin: auto;
   font-family: 'Cabinet Grotesk';
   font-style: normal;
   font-weight: 700;
@@ -73,4 +87,10 @@
   background: transparent;
   border: none;
   cursor: pointer;
+}
+
+.modal__delete_cancel:hover {
+  background-color: #000000;
+  color: #FF4D00;
+  border-radius: 10px;
 }
