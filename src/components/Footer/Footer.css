@@ -5,7 +5,8 @@
 .footer__container {
   max-width: 100%;
   display: flex;
-  background-color: red;
+  justify-content: space-between;
+  align-items: center;
   margin: 0 40px 0 40px;
 }
 
@@ -18,8 +19,13 @@
   margin: 0;
 }
 
+.footer__social-container {
+  display: flex;
+  gap: 10px;
+}
+
 .footer__social-icon {
-  width: 24px;
-  height: 24px;
+  width: 30px;
+  height: 30px;
   margin: 0;
 }
