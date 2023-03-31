@@ -89,5 +89,5 @@
 }
 
 .header__avatar:hover {
-  box-shadow: 5px 1px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 3px 2px 4px rgba(0, 0, 0, 0.3);
 }
