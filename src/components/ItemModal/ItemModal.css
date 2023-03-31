@@ -81,5 +81,13 @@
   border: none;
   background: transparent;
   color: red;
+  padding: 3px 3px 3px 3px;
+  
+}
+
+.modal__delete-button:hover {
+  background-color: red;
+  color: #000;
+  border-radius: 5px;
   cursor: pointer;
 }
