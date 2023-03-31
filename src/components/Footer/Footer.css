@@ -1,0 +1,19 @@
+.footer {
+  max-width: 1440px;
+}
+
+.footer__container {
+  max-width: 100%;
+  display: flex;
+  background-color: red;
+  margin: 0 40px 0 40px;
+}
+
+.footer__description {
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.2;
+  margin: 0;
+}
