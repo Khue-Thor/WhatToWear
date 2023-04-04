@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/WhatToWear/static/css/main.37416c27.css",
+    "main.js": "/WhatToWear/static/js/main.75e8dd85.js",
+    "static/js/787.79f92504.chunk.js": "/WhatToWear/static/js/787.79f92504.chunk.js",
+    "static/media/avatar.svg": "/WhatToWear/static/media/avatar.04ed6f80cb3749343c747b1ac144600d.svg",
+    "static/media/CabinetGrotesk-Regular.otf": "/WhatToWear/static/media/CabinetGrotesk-Regular.6c7032f4db5e585f0c48.otf",
+    "static/media/CabinetGrotesk-Medium.otf": "/WhatToWear/static/media/CabinetGrotesk-Medium.b8b578586abc9d55dcda.otf",
+    "static/media/CabinetGrotesk-Black.otf": "/WhatToWear/static/media/CabinetGrotesk-Black.8e4a33ec6bbcedc8de0d.otf",
+    "static/media/wtwr.svg": "/WhatToWear/static/media/wtwr.e6922bf0cc65fda664069a7fb7bb200c.svg",
+    "static/media/github.svg": "/WhatToWear/static/media/github.5e3f9d05c24a2b3cf18ca556bc5a95c4.svg",
+    "index.html": "/WhatToWear/index.html",
+    "static/media/close-icon.svg": "/WhatToWear/static/media/close-icon.5041c8cbf1275be14ac1.svg",
+    "static/media/linkedin.svg": "/WhatToWear/static/media/linkedin.ada11cda991129bc91b79d2c7cee1066.svg",
+    "static/media/cloudunion.svg": "/WhatToWear/static/media/cloudunion.d7ba0c95f79d37de6f6d3fb7cafc3286.svg",
+    "static/media/sun.svg": "/WhatToWear/static/media/sun.d13a8fcdb119dc3fe6a09ed116ba29c4.svg",
+    "main.37416c27.css.map": "/WhatToWear/static/css/main.37416c27.css.map",
+    "main.75e8dd85.js.map": "/WhatToWear/static/js/main.75e8dd85.js.map",
+    "787.79f92504.chunk.js.map": "/WhatToWear/static/js/787.79f92504.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.37416c27.css",
+    "static/js/main.75e8dd85.js"
+  ]
+}
