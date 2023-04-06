@@ -1,3 +1,15 @@
+@keyframes pulsate {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1.1);
+    opacity: 0;
+  }
+}
 .toggleswitch__container {
   position: relative;
   width: 56px;
@@ -10,11 +22,13 @@
   justify-content: space-around;
   cursor: pointer;
   margin: 0 20px 0 0;
+  animation: pulsate 1.6s ease-out infinite;
 }
 
 .toggleswitch__container:hover {
   transition: ease-in 0.2s;
   border-color: #000;
+  animation: none;
 }
 
 .toggleswitch {
