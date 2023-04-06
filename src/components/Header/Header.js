@@ -12,7 +12,7 @@ export function Header({ weatherData, hanleAddClick }) {
     <div className="header">
       <div className="header__container">
         <div className="header__logo-container">
-          <Link to={"/"}>
+          <Link to={"/WhatToWear"}>
             <img src={logoPath} className="header__logo" />
           </Link>
           <p className="header__date-location">

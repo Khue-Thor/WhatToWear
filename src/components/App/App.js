@@ -121,7 +121,7 @@ function App() {
         <div className="App__content">
           <Header weatherData={weatherData} hanleAddClick={handleAddClick} />
           <Switch>
-            <Route exact path={"/"}>
+            <Route exact path={"/WhatToWear"}>
               <Main weatherData={weatherData} cards={clothingitems} onCardClick={handleCardClick} />
             </Route>
             <Route path={"/profile"}>
